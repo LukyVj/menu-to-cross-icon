@@ -259,6 +259,20 @@ section .options.ckd:before, section .options.ckd:hover:before, section .options
   transition: transform .3s ease;
   border: 3px solid #E04681;
 }
+.snippet a.close {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: .7em;
+  top: 1em;
+  font-size: 1.2em;
+  text-shadow: none;
+  color: #E04681;
+  line-height: 0;
+}
+.snippet a.close i {
+  font-style: normal;
+}
 .snippet h4 {
   color: #fff;
 }
