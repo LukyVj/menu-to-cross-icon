@@ -350,6 +350,22 @@ section{
   transition: transform .3s ease;
   border: 3px solid $color;
 
+  a.close{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: .7em;
+    top: 1em;
+    font-size: 1.2em;
+    text-shadow: none;
+    color: $color;
+    line-height: 0;
+
+    i{
+      font-style: normal;
+    }
+  }
+
   h4{
     color: #fff;
   }

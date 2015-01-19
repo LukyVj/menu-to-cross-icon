@@ -37,6 +37,14 @@ $('.show_snippet').on('click', function(e){
         scrollTop: $this.parent().parent().offset().top
     }, 500);
   });
+$('.close').on('click', function(e){
+  e.preventDefault();
+  var $this = $(this);
+  $('body').toggleClass('lock');
+  $this.parent().parent().toggleClass('show');
+    $this.parent().parent().fond('.options').toggleClass('ckd');
+
+});
 $('.codepen-able').each( function(e){
  
 
