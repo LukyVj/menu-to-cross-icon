@@ -78,6 +78,9 @@ html, body {
 body {
   background: #2E313C;
 }
+body.lock {
+  overflow: hidden;
+}
 
 p {
   font-weight: 300;

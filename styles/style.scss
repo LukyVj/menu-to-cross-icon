@@ -154,6 +154,10 @@ html, body{
 
 body{
   background: $color-body;
+
+  &.lock{
+    overflow: hidden;
+  }
 }
 
 p{
