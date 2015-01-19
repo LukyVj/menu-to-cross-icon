@@ -7,6 +7,7 @@ http://lucasbonomi.com
 $('.howmuch').empty().append($('section').length);
 
 
+
 $(document).keydown(function(e) {
   switch(e.which) {
 
@@ -31,7 +32,11 @@ $('.show_snippet').on('click', function(e){
   var $this = $(this);
   $this.parent().parent().find('.snippet').toggleClass('show');
   $this.parent().toggleClass('ckd');
-});
+  $('body').toggleClass('lock');
+   $('html, body').animate({
+        scrollTop: $this.parent().parent().offset().top
+    }, 500);
+  });
 $('.codepen-able').each( function(e){
  
 
