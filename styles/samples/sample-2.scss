@@ -1,0 +1,34 @@
+
+
+.sample--2{
+  svg{
+    width: 52px;
+    height: 52px; 
+    z-index: 99999;
+    transition: all .3s ease;
+    display: block;
+    margin: 15% auto;
+    cursor: pointer;
+    g{   
+      transition: all .3s ease;
+      width: 100px;
+      height: 100px; 
+      display: block;
+      position: absolute; 
+      left: 50%;
+      top: 50%;
+      margin: auto;
+      cursor: pointer;
+    }
+
+    rect{
+      transition: all .3s ease; 
+      fill: $color;
+    }
+
+    g{
+      width: 100px;
+      height: 100px;
+    }
+  }
+} 

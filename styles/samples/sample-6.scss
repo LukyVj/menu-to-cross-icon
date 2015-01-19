@@ -1,0 +1,22 @@
+.sample--6{
+
+  span{
+    font-family:  "entypo", sans-serif;
+    font-size: 2em;
+    display: block;
+    margin: 15% auto;
+    width: 45px;
+    transition: transform .3s ease;
+    transform-origin: 25% 50%;
+
+    &:before{
+      content: "\2630";
+    }
+    &.close{
+      transform: rotate(-180deg);
+      &:before{
+        content: "\2715";
+      }
+    }
+  }
+}

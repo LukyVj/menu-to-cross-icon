@@ -1,0 +1,148 @@
+// time of transition
+$time: .3s;
+
+// value of how much menu icon bigger then it is initially
+$zoom: 1;
+
+// not important variables
+$bt: 0.5em;
+$bt-o: 0.4em;
+$len: 1em;
+$len-o: 1.2em;
+
+.sample--5{
+  
+  .menu {
+    width: 3em;
+    height: 3em;
+    background: $color;
+    position: relative;
+    z-index: 0;
+    margin: 15% auto;
+    
+    .bit-1{
+      &::before {
+        content: '';
+        left: 0.5em;
+        top: $bt;
+        position: absolute;
+        width: $len;
+        transform-origin: left bottom;
+        height: 0.3em; 
+        background: $color-body;
+        transition: transform $time,
+        top $time;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0.5em;
+        top: $bt;
+        width: $len; 
+        transform-origin: right bottom;
+        height: 0.3em; 
+        background: $color-body;
+        transition: transform $time,
+        top $time;
+      }
+    }
+    
+
+    .bit-2 {
+      position: absolute;
+      width: 2em; 
+      top: 50%;
+      left: 50%;
+      height: 0.3em; 
+      background: $color-body;
+      transform: translate(-50%,-50%);
+      transition: transform $time $time,
+      width $time $time*2;
+    }
+
+
+    .bit-3{
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: $bt;
+        left: 0.5em;
+        width: $len; 
+        transform-origin: left top;
+        height: 0.3em; 
+        background: $color-body;
+        transition: transform $time,
+        bottom $time;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: $bt;
+        right: 0.5em;
+        width: $len; 
+        transform-origin: right top;
+        height: 0.3em; 
+        background: $color-body;
+        transition: transform $time,
+        bottom $time;
+      }
+    }
+    
+
+    &.open {
+
+      .bit-1{
+
+        &:before {
+          top: $bt-o;
+          width: $len-o;
+          transform: rotate(45deg);
+          transform-origin: left bottom;
+          transition: transform $time $time,
+          width $time $time,
+          top $time $time;
+        }
+
+        &:after {
+          top: $bt-o;
+          width: $len-o;
+          transform: rotate(-45deg);
+          transform-origin: right bottom;
+          transition: transform $time $time,
+          width $time $time,
+          top $time $time;
+        }
+      }
+
+      .bit-2 {
+        width: 0.3em;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: transform $time $time,
+        width $time;
+      }
+
+      .bit-3 {
+        &:before{
+          bottom: $bt-o;
+          width: $len-o;
+          transform: rotate(-45deg);
+          transform-origin: left top;
+          transition: transform $time $time,
+          width $time $time,
+          bottom $time $time;
+        }
+        &:after{
+          bottom: $bt-o;
+          width: $len-o;
+          transform: rotate(45deg);
+          transform-origin: right top;
+          transition: transform $time $time,
+          width $time $time,
+          bottom $time $time;
+        }
+      }
+    }
+  }
+}

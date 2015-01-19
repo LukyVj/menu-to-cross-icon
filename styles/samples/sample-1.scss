@@ -1,0 +1,46 @@
+.sample--1{
+
+  span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 0px; 
+    margin:15% auto;
+
+    transition: all .3s ease, transform .2s ease;
+    background: linear-gradient(
+      to bottom, 
+      transparent 0%, transparent 20%,
+      $color-body 20%, $color-body 23%, 
+      transparent 23%, transparent 48%, 
+      $color-body 48%, $color-body 50%, 
+      transparent 47%, transparent 76%, 
+      $color-body 76%, $color-body 78%, transparent 78%), 
+    linear-gradient(transparent, transparent);
+
+    &:active, 
+    &:hover{
+      transform:  scale(.9);
+    }
+
+    &.clicked{ 
+      background: 
+      linear-gradient(-45deg, 
+        transparent 0%, transparent 48%, 
+        $color-body 49%, $color-body 51%,
+        transparent 51%, transparent 100%), 
+      linear-gradient(45deg, 
+        transparent 0%, transparent 48%, 
+        $color-body 49%, $color-body 51%,
+        transparent 51%, transparent 100%);
+      transform: rotate(180deg);
+
+      &:active, 
+      &:hover{
+        transform: scale(.9) rotate(180deg);
+      }
+
+    } 
+  }
+}

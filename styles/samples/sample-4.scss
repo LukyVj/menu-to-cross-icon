@@ -1,0 +1,22 @@
+.sample--4{
+  span{
+    margin: 15% auto;
+    display: block;
+    width: 45px;
+    height: 45px;
+    @include bars(1.5em,.25em,$color);
+    cursor: pointer;
+    transition: transform .2s ease;
+    z-index: 0;
+
+    &.close{
+      width: 45px;
+      height: 45px;
+      margin: 15% auto;
+      left: 10px;
+      @include closed(1.5em,.25em,$color);
+      transform: rotate(-180deg);
+      z-index: 0;
+    }
+  }
+}

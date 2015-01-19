@@ -1,0 +1,46 @@
+.sample--3{ 
+
+  .menu-icon{
+    font-size: 3em;
+    max-width: 45px;
+    text-align: center;
+    display: block;
+    margin:15% auto;
+    cursor: pointer;
+    transition: transform .2s ease;
+
+    &:hover{
+      transform: scale(.9);
+    }
+    &:before,
+    &:after{
+      line-height: .5;
+    }
+    &:before{
+      content: '☰'; 
+      display: block;
+    }
+    &:after{
+      content: '╳';
+      font-size: .75em;
+      font-weight: 800;
+      display: none;
+    }
+  }
+
+
+  #toggle-menu:checked ~  label[for="toggle-menu"]{  
+
+    .menu-icon{
+      transform: rotate(180deg);
+    }
+
+    .menu-icon:before{ 
+      display: none ;
+    }
+    .menu-icon:after{ 
+      display: block ;
+    }
+
+  }
+}

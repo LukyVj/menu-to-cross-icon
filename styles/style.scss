@@ -1,0 +1,490 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css';
+@import 'normalize.css';
+[class*="entypo-"]{
+  font-family: "entypo", sans-serif;
+  text-decoration: none;
+
+}
+// Theme 1
+$color: #E04681;
+$color-body: #2E313C;
+
+// Theme 2
+$color-2: #96C8A8;
+$color-body-2: #E7E0B2;
+
+// Theme 3
+$color-3: #E7E0B2;
+$color-body-3: #4B5C80;
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+ .cf:before,
+ .cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+ .cf {
+  *zoom: 1;
+}
+@mixin center(){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+}
+
+// Mixin for the 4ht example 
+@mixin bars($width,$height,$color) {
+  position:relative;
+  display: block;
+  width: $width;
+  height: $height;
+  background: $color;
+  border-radius: 3px;
+
+  &:before,&:after{
+    border-radius: 3px;
+
+    transition: transform .3s ease;  
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: -($height+.25em);
+    background: $color; 
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: $height+.25em;
+    background: $color;
+  }
+}
+
+@mixin closed($width,$height,$color) {
+  position:relative;
+  display: block;
+  width: 0;
+  height: 0;
+  background: transparent;
+  &:before,&:after{
+    transition:transform .3s ease; 
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: 0;
+    background: $color; 
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    top: 0;
+    background: $color;
+    transform: rotate(45deg);
+
+  }
+}
+
+
+.center{
+  @include center;
+}
+
+input{
+  display: none;
+  &[type="image"]{
+    display: block !important;
+    transform: scale(.5) translateY(-24px);
+  }
+}
+*{
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+a{
+  color: $color;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px $color-body, 2px 2px 0px darken($color-body, 5%);
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", helvetica, sans-serif;
+}
+
+body{
+  background: $color-body;
+}
+
+p{
+  font-weight: 300;
+}
+
+header, footer{
+  text-align: center;
+  padding: 2em 0 0; 
+  font-weight: 600;
+  position: relative;
+
+  h2,h3{ 
+    text-transform: uppercase;
+  }
+
+  body > &{
+    width: 100%;
+    height: 100%;
+    color: $color; 
+    float: left;  
+  }
+}
+
+footer{
+  height: 20%;
+  max-height: 80px;
+  border-top: 3px solid $color;
+  width: 100%;
+  float: left;
+  font-size: .9rem;
+  h2,h3,p{
+    padding: 0;
+    margin: 0;
+  }
+  > div > div{
+    width: 33.33%;
+    float: left;
+  }
+}
+
+.title{
+  border-top: 10px double $color;
+  border-bottom: 10px double $color;
+}
+section{
+  width: 100%;
+  height: 100%;
+  float: left;  
+  position: relative;
+  color: $color;
+
+  &:nth-child(even){
+    background: $color;
+    color: $color-body;
+
+    .snippet{
+      border: none
+    }
+    .options{
+      color: $color-body;
+      box-shadow: 1px 1px 0 $color, 2px 2px 0 rgba(#000,.4), inset 1px 1px 0 $color, inset 2px 2px 0 rgba(#000,.4);
+    }
+
+    a{
+      color: $color-body;
+      text-decoration: none;
+      text-shadow: 1px 1px 0px $color, 2px 2px 0px darken($color, 5%);
+    }
+    &:not(:last-child){
+      header{
+        h2{
+          border-color: $color-body;
+        }
+      }
+    }
+  }
+
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+
+
+    h2{
+      border-top: 3px solid $color;
+      border-bottom: 3px solid $color;
+      padding: 0;
+      max-width: 420px;
+      width: auto;
+      margin: auto;
+      padding: 0 .5em
+    }
+  }
+
+  .options{
+    color: $color;
+    text-align: center;
+    padding:1em 0;
+    margin: auto;
+    position: absolute;
+    bottom: 2em;
+    left: 0;
+    right: 0;
+    border: 1px currentColor solid;
+    max-width: 60px;
+    border-radius: 3px;
+    transform: scale(.8);
+    box-shadow: 1px 1px 0 $color-body, 2px 2px 0 rgba(#000,.4),
+    inset 1px 1px 0 $color-body, inset 2px 2px 0 rgba(#000,.4);
+
+    strong{
+      font-size: 1.2em;
+      padding: .5em;
+      opacity: .8;
+      transition: opacity .3s ease;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    &:before{
+      content: 'Show snippet';
+      min-width: 120px;
+      padding: .25em .5em .35em ;
+      border-radius: 100px;
+      background: rgba(black, .6);
+      position: absolute;
+      font-size: .8rem;
+      color: #fff;
+      top: -40px;
+      display: block;
+      left: -35px;
+      right: 0;
+      margin: auto;
+      opacity: 0;
+      transform:  translateY(1em);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    &:after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+
+      border-top: 7px solid rgba(black, .6);
+      left: 0;
+      right: 0;
+      position: absolute;
+      margin: auto;
+      top: -14px;
+      opacity: 0;
+      transform: translateY(1em);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    &:hover{
+      &:before,
+      &:after{
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    &.ckd:before,
+    &.ckd:hover:before,
+    &.ckd:after,
+    &.ckd:hover:after{
+      display: none;
+    }
+  }
+}
+
+.snippet{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 520px;
+  max-width: 960px;
+  right: 0;
+  left: 0;
+  margin: 1% auto;
+  background: rgba($color-body, .9);
+  border-radius: 4px;
+  overflow: hidden;
+  transform: scale(0) ;
+  transition: transform .3s ease;
+  border: 3px solid $color;
+
+  h4{
+    color: #fff;
+  }
+  &.show{
+    transform: scale(1) ;
+  } 
+  &.expanded{
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    transform: scaleX(2);
+  }
+  
+  footer, header{
+    float: left;
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+  }
+  footer{
+    a{
+      text-align: left;
+      float: right;
+      margin: 1em;
+    }
+  }
+  header{
+    border-bottom: 3px solid $color;
+    a{
+      text-align: center;
+    }
+  }
+
+  a.codepen-able{
+    text-shadow: none;
+    color: $color;
+    line-height: 44px;
+  }
+
+  pre{
+    display: block;
+    float: left;
+    height: calc(100% - 90px);
+    width: 33.33%;
+    padding: 0em 0em;
+    margin: 0;
+    
+    code{
+      font-size: 12px;
+      color: $color;
+      padding: 0 0;
+      float: left;
+      text-shadow: 1px 1px 0 rgba(black, .4);
+      padding: 0 1em;
+      width: 100%;
+      overflow: scroll;
+    }
+
+    &:before{
+      color: #fff;
+      position: relative;
+      width: 100%;
+      float: left;
+      padding: .75em;
+    }
+
+    &:nth-child(2){
+      &:before{
+        content: 'HTML';
+      }
+    }
+    &:nth-child(3){
+      &:before{
+        content: 'CSS';
+      }
+
+      border-left: 3px solid $color;
+      border-right: 3px solid $color;
+    }
+    &:nth-child(4){
+      &:before{
+        content: 'Javascript';
+      }
+    }
+  }
+}
+
+$size--dot: 9px;
+$margin--dot: 8px;
+
+$animation--speed: 1.8s;
+$animation--type: ease-in-out;
+
+.scroll-down{
+  width: $size--dot*2.5;
+  height: ($size--dot*3.85)+($margin--dot*2.85);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate( -50%, -50%);
+  
+  //box-shadow: inset 0 0 0 1px rgba(white, .2);
+  padding: $margin--dot;
+  border-radius: 50px; 
+  opacity: .8;
+  
+  .dot{
+    width: $size--dot;
+    height: $size--dot;
+    display: block;
+    background: $color;
+    border-radius: 100%;
+    box-shadow: 0 $size--dot+$margin--dot 0 rgba($color,0),
+    0 ($size--dot+$margin--dot)*2 0 rgba($color,0);
+    
+    animation: dotAnimation $animation--speed $animation--type infinite;
+  }
+  
+}
+
+
+@keyframes dotAnimation{
+  99%{
+    background: rgba($color,1);
+    box-shadow: 0 $size--dot+$margin--dot 0 rgba($color,0),
+    0 ($size--dot+$margin--dot)*2 0 rgba($color,0);
+  }
+  33%{
+    background: rgba($color,0);
+    box-shadow: 0 $size--dot+$margin--dot 0 rgba($color,1),
+    0 ($size--dot+$margin--dot)*2 0 rgba($color,0);
+  }
+  66%{
+    background: rgba($color,0);
+    box-shadow: 0 $size--dot+$margin--dot 0 rgba($color,0),
+    0 ($size--dot+$margin--dot)*2 0 rgba($color,1); 
+  }
+}
+
+@import 'samples/samples.scss';
