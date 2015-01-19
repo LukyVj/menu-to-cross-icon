@@ -62,6 +62,7 @@ $('.codepen-able').each( function(e){
       css_pre_processor  : "none",
       css_starter        : "neither",
       css_prefix_free    : false,
+      css_prefix         : "autoprefixer",
       js                 : JS,
       js_pre_processor   : "none",
       js_modernizr       : false,
