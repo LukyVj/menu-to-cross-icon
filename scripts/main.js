@@ -6,6 +6,9 @@ http://lucasbonomi.com
 // Unrelated to icons 
 $('.howmuch').empty().append($('section').length);
 
+setTimeout(function(){
+  $('#twitter-widget-0').css('transform', 'scale(.8)')
+}, 500)
 
 
 $(document).keydown(function(e) {
