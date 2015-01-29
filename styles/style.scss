@@ -19,6 +19,14 @@ $color-body-2: #E7E0B2;
 $color-3: #E7E0B2;
 $color-body-3: #4B5C80;
 
+@mixin scroll(){
+  &::-webkit-scrollbar { 
+    width: 0 !important 
+  }
+  -ms-overflow-style: none; 
+  overflow: -moz-scrollbars-none; 
+}
+
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -215,8 +223,18 @@ section{
     color: $color-body;
 
     .snippet{
-      border: none
+      border: none;
+
+      @include scroll();
+      
+      pre{
+        overflow: hidden;
+      }
+      pre, code{
+        @include scroll();
+      }
     }
+
     .options{
       color: $color-body;
       box-shadow: 1px 1px 0 $color, 2px 2px 0 rgba(#000,.4), inset 1px 1px 0 $color, inset 2px 2px 0 rgba(#000,.4);

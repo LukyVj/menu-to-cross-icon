@@ -137,6 +137,21 @@ section:nth-child(even) {
 }
 section:nth-child(even) .snippet {
   border: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+section:nth-child(even) .snippet::-webkit-scrollbar {
+  width: 0 !important;
+}
+section:nth-child(even) .snippet pre {
+  overflow: hidden;
+}
+section:nth-child(even) .snippet pre, section:nth-child(even) .snippet code {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+section:nth-child(even) .snippet pre::-webkit-scrollbar, section:nth-child(even) .snippet code::-webkit-scrollbar {
+  width: 0 !important;
 }
 section:nth-child(even) .options {
   color: #2E313C;
