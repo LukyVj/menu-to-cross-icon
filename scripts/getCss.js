@@ -12,18 +12,21 @@ function css(a) {
 }
 
 function css2json(css) {
-    var s = {};
+    var s = {},
+        l = [],
+        x = "";
     if (!css) return s;
     if (css instanceof CSSStyleDeclaration) {
         for (var i in css) {
-            if ((css[i]).toLowerCase) {
-                s[(css[i]).toLowerCase()] = (css[css[i]]);
+            x = css[i];
+            if ((x).toLowerCase) {
+                s[(x).toLowerCase()] = (css[x]);
             }
         }
     } else if (typeof css == "string") {
         css = css.split("; ");
-        for (var i in css) {
-            var l = css[i].split(": ");
+        for (var j in css) {
+            l = css[j].split(": ");
             s[l[0].toLowerCase()] = (l[1]);
         }
     }
