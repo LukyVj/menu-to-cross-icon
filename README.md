@@ -19,3 +19,4 @@ Some technics use vanilla javascript, some uses jQuery and some are powerd by CS
 
 ## Want to contribute ? 
 If you ever want to contribute to the project, just add a [pull request](https://github.com/LukyVj/menu-to-cross-icon/pulls) with a link to a **gist** containing all needed codes. 
+gist to contribution: https://gist.github.com/pestbarn/ec41e18bedd6f8456704
