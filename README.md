@@ -22,4 +22,4 @@ If you ever want to contribute to the project, just add a [pull request](https:/
 
 
 ## Contributions : 
-Gist to contribution from @pestbarn : https://gist.github.com/pestbarn/ec41e18bedd6f8456704
+Gist to contribution from [@pestbarn](https://github.com/pestbarn) : https://gist.github.com/pestbarn/ec41e18bedd6f8456704
