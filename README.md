@@ -5,7 +5,7 @@ One idea, 6 possibilities
 
 The project Menu-to-cross-icon is a project made to show people different ways to create a "Menu icon" that switch into a "cross icon" ( ☰ -> ✖ ) . 
 
-Some technics use vanilla javascript, some uses jQuery and some are powerd by CSS only!
+Some techniques use vanilla javascript, some uses jQuery and some are powerd by CSS only!
 
 ## Few secrets 
 - No matter where you are on the page, clicking the code brackets icon, will vertically center the page into your browser.
